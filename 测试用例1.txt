@@ -1,0 +1,134 @@
+int max(int x,int y){
+   if (x<y) {return y;}
+   else {return x;}
+}
+
+int min(int x,int y){
+   if (x<y) {return x;}
+   else {return y;}
+}
+
+int main(int x,float y,int array[]) {
+    if (max(x,y)> array[3] ) {
+         return max(x,y);
+    } else {
+        return min(x,y);
+    }
+}
+
+
+/* 测试用例 2 */
+
+/* A program to perform Euclid's 
+Algorithm to compute gcd */
+
+int gcd (int u, int v)
+{
+    if (v == 0) return u;
+    else return gcd(v,u%v);
+}
+
+void main(void)
+{
+    int x; int y;
+    x = input ();
+    y = input ();
+   output(gcd(x,y));
+}
+
+
+/* 测试用例 3 */
+/* A program to perform selection sort in a 10 element array. */
+
+int x[10];
+int Findmin(int a[], int low, int high)
+{
+    int i; int x;int k;
+    k = low;
+    x = a[low];
+    i = low +1;
+
+    while (i< high-1)
+    {
+        int t;
+        k = Findmin(a,i,high);
+        t = a[k];
+        a[k] = a[i];
+        a[i] = t;
+         i = i+1;
+    }
+}
+
+
+
+void main(void)
+{
+    int i;
+    i = 0;
+    while (i<10)
+    { 
+        x[i] = input();
+        i = i+1;
+     }
+     selectsort(x,0,10);
+     i = 0;
+     while (i<10)
+     {
+          output(x[i]);
+          i = i+1;
+     }
+}
+
+
+
+/* 测试用例 4 do_while */
+/* A program to perform selection sort in a 10 element array. */
+
+int x[10];
+int Findmin(int a[], int low, int high)
+{
+    int i; int x; int k;
+    k = low;
+    x = a[low];
+    i = low +1;
+    
+    do
+        { 
+           if (a[i] <x) { x = a[i]; k = i;}
+           i = i + 1 ;
+        }
+    while (i< high);
+    return k;
+}
+
+void Selectsort( int a[], int low, int high)
+{ int i; int k;
+   i = low;
+   do
+      {    int t;
+           k =  Findmin(a,i,high);
+           t = a[k];
+          a[k] = a[i];
+          a[i] = t;
+          i = i+1;
+      }   while(i<high-1);
+}
+
+
+
+void main(void)
+{   int i;
+    i = 0;
+    do
+    {  x[i] = input();
+       i = i+1;
+    } while (i<10);
+
+     Selectsort(x,0,10);
+     i = 0;
+     do
+         {
+          output(x[i]);
+          i = i+1;
+     } while (i<10);
+}
