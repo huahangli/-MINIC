@@ -1,5 +1,4 @@
 # -MINIC
-The project of Principle of Compile in South China Normal University.
 
 华南师大计算机 编译原理课程项目
 一个C语言子集的编译器，包括词法分析器和语法分析器
